@@ -1,0 +1,53 @@
+/* scaffolding.css : 项目的基础样式设定（常用的标签、常用的通用class） */
+* {
+	/* 浏览器默认的盒子模型计算方法：“内容盒子”
+	   盒子的总宽度 = width + border + padding + margin */
+	/* 默认值：box-sizing: content-box; */
+	
+	/* 推荐的盒子模型计算方法：“边框盒子” —— 边框以内全算作width
+	   盒子的总宽度 = width + margin */
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 12px;
+	font-family: "arial, helvetica, sans-serif";
+	color: #333;
+	background: #fff;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #f60;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}

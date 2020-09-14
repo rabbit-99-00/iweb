@@ -1,0 +1,27 @@
+1、面试题 ：大型页面时CSS的章法？
+   一个大型页面（例如：京东首页）CSS大约有1000行，编写时有一定的章法：
+      ①CSS Reset：样式重置，把HTML标签的默认样式统一(规范)化 —— 可以使用Normalize.css
+	      Normalize.css 超链接 ：http://necolas.github.io/normalize.css/
+		                执行语句 ：npm install normalize.css
+	  ②Scaffolding：样式脚手架，设定全局的基础样式
+	  ③Layout System：布局系统
+	    1.1 使用浮动布局时常见的问题：
+		        若容器中的子元素浮动起来，则不再占用布局空间；
+			    如果容器内所有的子元素全部浮动，则父元素不再有高度。
+			解决方案：<div style="clear: both;"></div>  或
+			    .child {
+					float: left;
+				}
+			    .parent:after {  /* 在父容器尾部生成新孩子 */
+					content: '';
+					display: block;
+					clear: both;  /* 清除兄弟元素浮动造成的影响
+				}
+	  ④
+	  ⑤
+“PC-6列”、“PAD-4列”、“PHONE-2列
+一个HTML可以声明多个class
+	<div class="row">
+		<div class="col-lg-2 col-md-3 col-sm-6"></div>
+	</div>
+“最新课程”列表 www.codeboy.com:9999/iweb/
