@@ -1,0 +1,103 @@
+/* 多个页面所通用的组件必需的样式 */
+/* 1.以下为“顶部的灰色条” */
+.topbar {
+	background: #F9F9F9;
+	border-bottom: 1px solid #EEE;
+	line-height: 36px;
+}
+
+.topbar-item {
+	padding: 0 0.5em;
+	color: #555;
+}
+
+/* 选择“父元素”下的最后一个“子元素” */
+.topbar-item:last-child {
+	padding-right: 0;
+}
+
+/* 2.以下为“LOGO + 搜索条” */
+.logo {
+	margin: 1.5em 0;
+}
+
+.search {
+	/* 保证元素在父元素中竖直居中的方法1: 调整上间距 */
+	/* margin-top: 25px; */
+	
+	/* 保证元素在父元素中竖直居中的方法2: 先向下移到父容器中线以下，再向上微调自身高度的一半儿,但会使浮动失效 */
+	/*position: relative;  /* 相对定位 */
+	position: absolute;  /* 绝对定位,需哟一个有相对定位的父元素 */
+	top: 50%;  /* 上、右、下、左默认对普通元素无效,需要“定位”。 */
+	margin-top: -16px;  /* 向上微调自身高度的一半儿 */
+	right: 200px;  /*距离右边200px（为购物车留出位置）*/
+}
+
+.searchbar > .container {
+	position: relative;  /* 为子元素提供定位标准 */
+}
+
+.search-input {
+	width: 360px;
+	height: 32px;
+	line-height: 32px;
+	/* 美化 */
+	padding: 0 0.6em;
+	font-size: 1.15em;
+	border: 1px solid #CCC;
+	/* margin-right: 50px;  /* 让出右侧的搜索按钮的空间 */
+}
+
+.search-button {
+	width: 50px;
+	height: 32px;
+	background: #00BE56;
+	color: #FFF;
+	line-height: 32px;
+	border: none;
+	font-size: 1.7em;
+	position: absolute;
+	/* right: 0; */
+	/* top: 0; */
+}
+
+.myCart {
+	position: absolute;  /* 绝对定位 */
+	right: 0;
+	top: 50%;
+	height: 32px;
+	margin-top: -16px;
+	border: 1px solid #DDD;
+	background: #F9F9F9;
+	line-height: 32px;
+	padding: 0 0.5em;
+}
+
+.myCartColor {
+	color: #00BE56;
+	font-size: 1.15em;
+}
+
+/* 3.以下为导航条 */
+.navbar {
+	background: #00BE56;
+	border-bottom: 3px solid #B3EFC0;
+	height: 52px;
+}
+
+.carouselbar {
+	border-bottom: 4px solid #DDD;
+}
+
+.mainbar {
+	border-bottom: 1px solid #DDD;
+}
+
+.bottombar {
+	background: #EEE;
+}
+
+/* 选择“底部条”中的“容器”下的第一个.row元素 */
+.bottombar>.container>.row:first-child {
+	border-bottom: 1px solid #DDDDDD;
+}
