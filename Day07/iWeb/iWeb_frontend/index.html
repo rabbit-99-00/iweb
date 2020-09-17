@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="icon" href="./img/logo.ico" />
+		<title>首页——i前端 15510318281</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/scaffolding.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/components.css">
+	</head>
+	<body>
+		<!-- 1.最顶部的“灰色条”: topbar -->
+		<div class="topbar">
+			<div class="container">
+				<div class="text-right">
+					<a href="#" class="topbar-item">
+						<span class="fa fa-star"></span>
+						收藏i前端
+					</a>
+					<a href="#" class="topbar-item">
+						<span class="fa fa-lg fa-mobile"></span>
+						<span style="color: #f60;">下载手机客户端</span>
+					</a>
+					<span class="topbar-item">
+						<span class="fa fa-envelope"></span>
+						反馈邮箱：iweb@126.com
+					</span>
+					<span class="topbar-item">
+						<span class="fa fa-fax"></span>
+						客服热线：4008-200-200
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- 2.搜索条: searchbar -->
+		<div class="searchbar">
+			<div class="container">
+				<div class="row">
+					<!-- 左侧的LOGO -->
+					<div class="col-lg-2">
+						<a href="index.html">
+							<img class="logo" src="img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- 靠右对齐的搜索框和购物车按钮 -->
+					<div class="col-lg-10">
+						<!-- 搜索框 -->
+						<div class="search">
+							<!-- placeholder : 占位符 -->
+							<input placeholder="课程搜索" class="search-input">
+							<button class="search-button">
+								<span class="fa fa-search"></span>
+							</button>
+						</div>
+						<!-- 购物车 -->
+						<div class="myCart">
+							<span class="fa fa-lg fa-shopping-cart"></span>
+							我的购物车(0)
+							<span class="fa fa-lg fa-caret-down"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 3.导航条: navbar -->
+		<div class="navbar">
+			<div class="container">
+				<div class="row">
+					<!-- 导航菜单 -->
+					<div class="col-lg-10">
+						<ul class="menu">
+							<!-- current: 当前页;active: 激活页; -->
+							<li class="active"><a href="index.html">首页</a></li>
+							<li><a href="#">全部课程</a></li>
+							<li><a href="#">基础课程</a></li>
+							<li><a href="#">核心课程</a></li>
+							<li><a href="#">进阶课程</a></li>
+							<li><a href="#">名师堂</a></li>
+							<li><a href="#">校区</a></li>
+						</ul>
+					</div>
+					<!-- 登录和注册 -->
+					<div class="col-lg-2">
+						<div class="user-center">
+							<div class="text-center">
+								<a href="#">登录</a>
+								<span>|</span>
+								<a href="#">注册</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 4.轮播广告条: carouselbar -->
+		<div class="carouselbar">
+			<div class="container-fluid">
+				<div class="carousel">
+					<!-- 轮播项 -->
+					<ul class="items">
+						<li class="active"><a href="#" style="background-image: url(./img/banner01.jpg);"></a></li>
+						<li><a href="#" style="background-image: url(./img/banner02.jpg);"></a></li>
+						<li><a href="#" style="background-image: url(./img/banner03.jpg);"></a></li>
+						<li><a href="#" style="background-image: url(./img/banner04.jpg);"></a></li>
+					</ul>
+					<!-- 轮播指示器 -->
+					<ul class="indicators">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 5.主题部分: mainbar -->
+		<div class="mainbar">
+			<div class="container">主题部分</div>
+		</div>
+		<!-- 6.底部条: bottombar -->
+		<div class="bottombar">
+			<div class="container">
+				<div class="row">底部功能菜单</div>
+				<div class="row">版权声明</div>
+			</div>
+		</div>
+	</body>
+</html>
