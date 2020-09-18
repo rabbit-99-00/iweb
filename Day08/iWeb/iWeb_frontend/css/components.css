@@ -1,0 +1,263 @@
+/* 多个页面所通用的组件必需的样式 */
+/* 1.以下为“顶部的灰色条” */
+.topbar {
+	background: #F9F9F9;
+	border-bottom: 1px solid #EEE;
+	line-height: 36px;
+}
+
+.topbar-item {
+	padding: 0 0.5em;
+	color: #555;
+}
+
+/* 选择“父元素”下的最后一个“子元素” */
+.topbar-item:last-child {
+	padding-right: 0;
+}
+
+/* 2.以下为“LOGO + 搜索条” */
+.logo {
+	margin: 1.5em 0;
+}
+
+.search {
+	/* 保证元素在父元素中竖直居中的方法1: 调整上间距 */
+	/* margin-top: 25px; */
+	
+	/* 保证元素在父元素中竖直居中的方法2: 先向下移到父容器中线以下，再向上微调自身高度的一半儿,但会使浮动失效 */
+	/*position: relative;  /* 相对定位 */
+	position: absolute;  /* 绝对定位,需哟一个有相对定位的父元素 */
+	top: 50%;  /* 上、右、下、左默认对普通元素无效,需要“定位”。 */
+	margin-top: -16px;  /* 向上微调自身高度的一半儿 */
+	right: 200px;  /*距离右边200px（为购物车留出位置）*/
+}
+
+.searchbar > .container {
+	position: relative;  /* 为子元素提供定位标准 */
+}
+
+.search-input {
+	width: 360px;
+	height: 32px;
+	line-height: 32px;
+	/* 美化 */
+	padding: 0 0.6em;
+	font-size: 1.15em;
+	border: 1px solid #CCC;
+	margin-right: 50px;  /* 让出右侧的搜索按钮的空间 */
+}
+
+.search-button {
+	width: 50px;
+	height: 32px;
+	background: #00BE56;
+	color: #FFF;
+	line-height: 32px;
+	border: none;
+	font-size: 1.7em;
+	position: absolute;
+	right: 0; */
+	top: 0; */
+}
+
+.myCart {
+	position: absolute;  /* 绝对定位 */
+	right: 0;
+	top: 50%;
+	height: 32px;
+	margin-top: -16px;
+	border: 1px solid #DDD;
+	background: #F9F9F9;
+	line-height: 32px;
+	padding: 0 0.5em;
+}
+
+.myCart > .fa {
+	color: #00BE56;
+	padding: 0 0.5em;
+}
+
+/* 3.以下为导航条 */
+.navbar {
+	background: #00BE56;
+	border-bottom: 3px solid #B3EFC0;
+	height: 52px;
+	font-size: 1.15em;
+}
+
+.menu:after {}
+
+.menu > li {
+	float: left;
+	line-height: 49px;
+	padding: 0 1.5em;
+}
+
+.menu > li:hover {
+	background: #00B149;
+}
+
+.menu > li.active {
+	background: #00A43D;
+}
+
+.menu > li > a {
+	color: #FFF;
+}
+
+.user-center {
+	background: #55C760;
+	line-height: 49px;
+}
+
+.user-center a,
+.user-center span {
+	color: #FFF;
+}
+
+.user-center a:hover {
+	color: #FFFF9B;
+}
+
+/* 4.轮播广告 */
+.carouselbar {
+	border-bottom: 4px solid #DDD;
+}
+
+.carousel {
+	position: relative; /* 相对定位，为绝对定位的子元素提供参照物 */
+}
+
+.carousel .items a {
+	display: block; /* 改为块级元素，可以指定宽和高 */
+	width: 100%;
+	height: 380px;
+	background-position: center; /* 背景图的位置 */
+	background-repeat: no-repeat;  /* 背景图仅仅显示一次，不重复，不平铺 */
+}
+
+.carousel .items li:not(.active) { /* 不带.active的li */
+	display: none; /* 隐藏 */
+}
+
+.carousel .indicators {
+	position: absolute;  /*圆形指示器需要在图片上方，不占布局空间 */
+	bottom: 20px;
+	left: 50%;  /* 固定定位的元素水平居中 */
+	margin-left: -72px;  /* 向左微调自身一半的宽度 18+18+18+9px */
+}
+.carousel .indicators li {
+	width: 18px;
+	height: 18px;
+	background: #CCC;
+	border-radius: 50%;  /* 边框圆角半径为尺寸的一半 */
+	float: left;
+	margin: 0 9px;
+	cursor: pointer; /* 鼠标悬停时，光标变为“小手” */
+}
+
+.carousel .indicators li.active {
+	background: #FF9300;
+}
+
+.carousel .controls {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.carousel .controls .prev,
+.carousel .controls .next {
+	position: absolute;
+	width: 54px;
+	height: 94px;
+	font-size: 6em;
+	line-height: 94px;  /* 文字竖直居中 */
+	text-align: center; /* 文字水平居中 */
+	/* opacity: 0.5;  会导致当前元素及其中的文字/图片都透明 */
+	background: rgba(0,0,0,0.3);  /* 仅仅是背景半透明 */
+	color: #FFF;
+	margin-top: -47px;
+}
+
+.carousel .controls .prev {
+	margin-left: -496px;
+}
+
+.carousel .controls .next {
+	margin-left: 442px;
+}
+
+.carousel .controls .prev:hover,
+.carousel .controls .next:hover {
+	background: rgba(0,0,0,0.6);
+}
+
+/* 5.主体部分 */
+.mainbar {
+	border-bottom: 1px solid #DDD;
+}
+
+.mainbar .header {
+	border-bottom: 3px solid #DDD;
+	position: relative;
+}
+
+.mainbar .header h3 {
+	font-weight: normal;  /* 标题字取消加粗 normal: 正常 */
+	margin-bottom: 0.5em;
+	padding: 0 0.8em;
+}
+
+.mainbar .header span {
+	width: 6.5em;
+	height: 3px;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	background: #00BE56;
+}
+
+.mainbar .header a {
+	position: absolute;
+	right: 0;
+	bottom: 0.3em;
+}
+
+.mainbar .course {
+	padding: 1.2em 0;  /* 每列中的 .course 需要自己提供上下间距 */
+	/* border: 1px solid #000; /* 测试用的 */
+}
+
+.mainbar .course .pic img {
+	width: 100%;
+}
+
+.mainbar .course .title {
+	display: block; /* 让课程标题占一整行 */
+	line-height: 1.8em;
+}
+
+.mainbar .course .teacher {
+	display: block; /* 让讲师姓名占一整行 */
+	font-size: 0.8em;
+	color: #999;
+	line-height: 1.8em;
+}
+
+.mainbar .course .price {
+	display: block; /* 让价格占一整行 */
+	font-weight: bold; /* 字体加粗 */
+	color: #FF5A00;
+}
+
+/* 6.底部条 */
+.bottombar {
+	background: #EEE;
+}
+
+/* 选择“底部条”中的“容器”下的第一个.row元素 */
+.bottombar>.container>.row:first-child {
+	border-bottom: 1px solid #DDDDDD;
+}
