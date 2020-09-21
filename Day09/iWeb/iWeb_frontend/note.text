@@ -1,0 +1,154 @@
+一、面试题 ：大型页面时CSS的章法？
+   一个大型页面（例如：京东首页）CSS大约有1000行，编写时有一定的章法：
+      ①CSS Reset：样式重置，把HTML标签的默认样式统一(规范)化 —— 可以使用Normalize.css
+	      Normalize.css 超链接 ：http://necolas.github.io/normalize.css/
+		                执行语句 ：npm install normalize.css
+	  ②Scaffolding：样式脚手架，设定全局的基础样式
+	  ③Layout System：布局系统
+	    1.1 使用浮动布局时常见的问题：
+		        1.若容器中的子元素浮动起来，则不再占用布局空间；
+			    2.如果容器内所有的子元素全部浮动，则父元素不再有高度。
+			解决方案：<div style="clear: both;"></div>  或
+			    .child {
+					float: left;
+				}
+			    .parent:after {  /* 在父容器尾部生成新孩子 */
+					content: '';
+					display: block;
+					clear: both;  /* 清除兄弟元素浮动造成的影响
+				}
+	  ④Components：组件，多个页面所公用的
+	  ⑤
+
+二、“PC-6列”、“PAD-4列”、“PHONE-2列
+	一个HTML可以声明多个class
+		<div class="row">
+			<div class="col-lg-2 col-md-3 col-sm-6"></div>
+		</div>
+	“最新课程”列表 www.codeboy.com:9999/iweb/
+	
+三、项目中大量小图标的处理方式：
+	方式1：每个小图片都是一个独立的.png文件，例如: search.png，user.png，star.png......HTML中使用<img>显示图片。
+		不足: 会增加浏览器资源请求次数，导致页面加载效率变低。
+	方式2：把多个小图片拼接为一个大的.png（称为“Sprites Image[精灵图/雪碧图]”），使用时利用浏览器的缓存机制（请求一次之后，再次用到该图片无需再请求）可以实现大图片仅请求一次的效果。
+		不足: 1.如果需要添加新的图标必须修改png图片；
+              2.因为使用时必需配合CSS Backgroung属性来使用，有些场合下不允许。
+	方式3：使用图标字体（icon font），本质是文字字符（可以无限缩放/改变颜色/改变背景/加粗/变斜），呈现的外观是图标。————推荐使用开源的FontAwsome图标字体（提供了675个常用图标）。
+	
+四、FontAwsome的使用步骤：
+	1.下载字体文件，保存到项目目录下，如fonts/，以供用户浏览网页时可以下载到字体文件。
+	2.（服务器端字体文件）在CSS文件中声明两个class：
+		@font-face {  //定义一种新的字体
+			font-family: 'FontAwsome';
+			src: url('../fonts/fontawsome.ttf');
+		}
+		.fa {  //使用刚刚定义的新字体
+			font-family: 'FontAwsome';
+		}
+		.fa-bank:before {
+			content: '\f19c';  //使用内容生成
+		}
+	3.页面中引入上述CSS，开始使用图标字体：
+	<span class="fa fa-bank"></span>
+	注意：因为使用前置内容生成创建的图标，所以每个span中只能放置一个图标，即需要N个图标就需要N个图标字体
+		3.1、常用的图标字体：
+		星星： star			心脏： heart			信封： envelope					房子： home			
+		座机： fax			放大镜： search		购物车： shopping-cart			手机： mobile
+		用户小人： user		24小时救援电话： phone			对勾/叉子： check/times(remove/close)
+		定位： map-marker	齿轮： cog 、gear	列表： list						垃圾桶： trash
+		向下的三角按钮：caret-down/sort-down				上一张/下一张的箭头： arrow-left/arrow-right
+
+五、面试题：
+	1.如何实现一个行内元素水平居中？ text-align: center;
+	2.如何实现一个块级元素水平居中？ margin: 0 auto;
+	3.如何实现一个块级元素竖直居中？ line-height: 高度;
+	4.如何实现一个背景图片居中显示？ background-position: center;
+	
+
+
+
+
+
+
+
+
+
+一、面试题：CSS中的元素定位有哪些？各自的使用场合？
+	1.没有定位：默认值，占用布局空间，不能使用top/right/bottom/left改变自己的位置(静态定位，系统自动分配位置。)
+		position: static;
+	2.相对定位：与没有定位的元素几乎没有区别，占用布局空间，常用于为绝对定位的子元素提供定位的参照物
+			  (可以指定top/right/bottom/left属性，但在原位置会有一片留白[参照物是自己的默认位置]，为此几乎没人会使用“上右下左”。)
+		position: relative;
+	3.绝对定位：不占用布局空间，常用于悬停其它元素上方的效果；
+			   可以指定top/right/bottom/left属性——必需一个已经定位了的父元素；
+		position: absolute;
+	4.固定定位：不占用布局空间，常用于固定定位于屏幕的某个固定位置，不随内容的滚动而滚动
+			   永远相对于body定位
+		position: fixed;
+		
+		                    是否占用布局空间       是否可以使用“上右下左”          参照物
+		
+		(静态)static               √                       ×
+		
+		(相对)relative             √                       √                      自己
+		
+		(绝对)absolute             ×                       √                    相对定位
+		
+		(固定)fixed                ×                       √                      body
+		
+二、Web前端界的三大难点
+	1.浏览器/设备兼容性
+	2.Web性能优化 —— 咨询(软件咨询公司，给项目做分析)
+	3.Web安全
+	
+三、常见的图片格式(图片压缩：存储为Web所用格式[PS])
+	1.JPG：色彩最细腻，压缩比最高；不支持透明和动画
+	2.PNG：色彩一班细腻，压缩比一般；对透明的支持最好
+	3.GIF：色彩表现一般，压缩比不好；支持透明和动画
+	
+四、超链接<a href=""></a> 默认为行内元素，不能指定宽和高；但将它
+	转换为行内块元素 display: inline-block; 可以指定宽和高；其次，
+	将它转换为块级元素 display: block; 也可以指定宽和高。
+	
+五、请谈谈你对可复用性代码的了解？垃圾代码的粘贴？
+
+
+
+
+
+
+
+
+
+
+一、浮动布局中的“坑”！  《 见test02.html 》
+	假设：   .parent>.child1+.child2+..child2
+	.parent的宽度可以容纳.child1，.child2和.child3，如果三个族元素都浮动的话，。child3会被寄到下一行
+		1. .child1和.child2一样高，则.child3跑到.child1下方
+		2. .child1比.child2高，则.child3跑到.child2下方
+		3. .child1和.child2矮，则.child3跑到.child1下方，但顶部与.child2下方对齐(即.chil3不会挨到.child1)
+		
+		提示：2.和3.造成的留白无法解决！！！
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+一、为页面添加响应式/自适应功能
+	1.最新课程/热门课程 : 【col-lg-3】  【col-md-4】  【col-sm-6】
+		PC: 一行4列
+		PAD: 一行3列
+		PHONE: 一行2列
+		
+二、CSS复习：如何实现水平滚动效果？
+	.box {
+		/* 在一行结尾不换行(即使一行放不下) */
+		white-space: nowrap;
+		/* 水平方向上,内容溢出时，显示滚动条；否则不显示 */
+		overflow-x: auto;
+	}

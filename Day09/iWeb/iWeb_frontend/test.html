@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>水平方向上滚动</title>
+		<style type="text/css">
+			.box {
+				border: 1px solid #000;
+				width: 700px;
+				white-space: nowrap; /* 空白部分放不下更多内容时，也不换行 */
+				/* overflow: hidden; /* 溢出：隐藏 */
+				/* overflow-x: scroll; /* 强制 ：水平方向上强制呈现滚动条 */
+				overflow-x: auto; /* 自动 ：当水平方向内容溢出时，显示滚动条；无溢出时不显示 */
+			}
+			
+			.box img {
+				width: 300px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/banner/banner01.jpg">
+			<img src="img/banner/banner02.jpg">
+			<img src="img/banner/banner03.jpg">
+			<img src="img/banner/banner04.jpg">
+		</div>
+	</body>
+</html>
