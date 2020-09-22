@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="icon" href="./img/logo.ico" />
+		<title>首页——i前端 15510318281</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/scaffolding.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/components.css">
+	</head>
+	<body>
+		<!-- 1.最顶部的“灰色条”: topbar -->
+		<div class="topbar hidden-sm">
+			<div class="container">
+				<div class="text-right">
+					<a href="#" class="topbar-item">
+						<span class="fa fa-star"></span>
+						收藏i前端
+					</a>
+					<a href="#" class="topbar-item">
+						<span class="fa fa-lg fa-mobile"></span>
+						<span style="color: #f60;">下载手机客户端</span>
+					</a>
+					<span class="topbar-item">
+						<span class="fa fa-envelope"></span>
+						反馈邮箱：iweb@126.com
+					</span>
+					<span class="topbar-item">
+						<span class="fa fa-fax"></span>
+						客服热线：4008-200-200
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- 2.搜索条: searchbar -->
+		<div class="searchbar">
+			<div class="container">
+				<div class="row">
+					<!-- 左侧的LOGO -->
+					<div class="col-lg-2 col-sm-2 logo-container">
+						<a href="index.html">
+							<img class="logo hidden-sm" src="img/logo.png">
+							<img class="logo_reverse hidden-lg hidden-md" src="img/logo_reverse.png">
+						</a>
+					</div>
+					<!-- 靠右对齐的搜索框和 购物车按钮(PHONE屏幕下隐藏) -->
+					<div class="col-lg-10 col-sm-8">
+						<!-- 搜索框 -->
+						<div class="search">
+							<!-- placeholder : 占位符 -->
+							<input placeholder="课程搜索" class="search-input">
+							<button class="search-button">
+								<span class="fa fa-search fs"></span>
+							</button>
+						</div>
+						<!-- 购物车 -->
+						<div class="myCart hidden-sm">
+							<span class="fa fa-lg fa-shopping-cart"></span>
+							我的购物车(0)
+							<span class="fa fa-lg fa-caret-down"></span>
+						</div>
+					</div>
+					<!-- 仅在PHONE屏幕下显示的“汉堡包”按钮 -->
+					<div class="col-sm-2 hidden-md hidden-lg">
+						<sapn class="fa fa-navicon hamburger"></sapn>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 3.导航条: navbar -->
+		<div class="navbar">
+			<div class="container">
+				<div class="row">
+					<!-- 导航菜单 -->
+					<div class="col-lg-10">
+						<ul class="menu">
+							<!-- current: 当前页;active: 激活页; -->
+							<li class="active"><a href="index.html">首页</a></li>
+							<li><a href="#">全部课程</a></li>
+							<li><a href="#">基础课程</a></li>
+							<li><a href="#">核心课程</a></li>
+							<li><a href="#">进阶课程</a></li>
+							<li><a href="#">名师堂</a></li>
+							<li><a href="#">校区</a></li>
+						</ul>
+					</div>
+					<!-- 登录和注册 -->
+					<div class="col-lg-2">
+						<div class="user-center">
+							<div class="text-center">
+								<a href="login.html">登录</a>
+								<span>|</span>
+								<a href="register.html">注册</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 4.轮播广告条: carouselbar -->
+		<div class="carouselbar">
+			<div class="container-fluid">
+				<div class="carousel">
+					<!-- 轮播项 -->
+					<ul class="items">
+						<li class="active"><a href="#" style="background-image: url(./img/banner/banner01.jpg);"></a></li>
+						<li><a href="#" style="background-image: url(./img/banner/banner01.jpg);"></a></li>
+						<li><a href="#" style="background-image: url(./img/banner/banner03.jpg);"></a></li>
+						<li><a href="#" style="background-image: url(./img/banner/banner04.jpg);"></a></li>
+					</ul>
+					<!-- 轮播指示器 -->
+					<ul class="indicators">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<!-- 上/下一张切换控件 -->
+					<div class="controls">
+						<div class="prev">
+							<span class="fa fa-chevron-left"></span>
+						</div>
+						<div class="next">
+							<span class="fa fa-chevron-right"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 5.主题部分: mainbar -->
+		<div class="mainbar">
+			<div class="container">
+				<!-- 5.1、最新课程 -->
+				<div class="header">
+						<h3>最新课程</h3>
+						<span></span>
+						<a href="#">更多</a>
+					</div>
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/01.jpg"></a>
+								<a href="#" class="title">12-微信小程序开发</a>
+								<a href="#" class="teacher">讲师：程涛</a>
+								<span class="price">¥ 599.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/02.jpg""></a>
+								<a href="#" class="title">11-Unity地形搭建</a>
+								<a href="#" class="teacher">讲师：张东</a>
+								<span class="price">¥ 600.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/03.jpg"></a>
+								<a href="#" class="title">10-UI控件之基础控件</a>
+								<a href="#" class="teacher">讲师：李然</a>
+								<span class="price">¥ 450.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/04.jpg"></a>
+								<a href="#" class="title">09-微信小程序高级</a>
+								<a href="#" class="teacher">讲师：成亮</a>
+								<span class="price">¥ 200.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/05.jpg"></a>
+								<a href="#" class="title">05-零基础绘图入门(上)</a>
+								<a href="#" class="teacher">讲师：成亮</a>
+								<span class="price">¥ 350.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/06.jpg"></a>
+								<a href="#" class="title">06-jQuery操作DOM(上)</a>
+								<a href="#" class="teacher">讲师：李然</a>
+								<span class="price">¥ 600.00</span>
+							</div>
+						</div>
+				    <div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/01.jpg"></a>
+								<a href="#" class="title">12-微信小程序开发</a>
+								<a href="#" class="teacher">讲师：程涛</a>
+								<span class="price">¥ 599.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/02.jpg"></a>
+								<a href="#" class="title">11-Unity地形搭建</a>
+								<a href="#" class="teacher">讲师：张东</a>
+								<span class="price">¥ 600.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/03.jpg"></a>
+								<a href="#" class="title">10-UI控件之基础控件</a>
+								<a href="#" class="teacher">讲师：李然</a>
+								<span class="price">¥ 450.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/04.jpg"></a>
+								<a href="#" class="title">09-微信小程序高级</a>
+								<a href="#" class="teacher">讲师：成亮</a>
+								<span class="price">¥ 200.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/05.jpg"></a>
+								<a href="#" class="title">05-零基础绘图入门(上)</a>
+								<a href="#" class="teacher">讲师：成亮</a>
+								<span class="price">¥ 350.00</span>
+							</div>
+						</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="course">
+								<a href="#" class="pic"><img src="img/course/06.jpg"></a>
+								<a href="#" class="title">06-jQuery操作DOM(上)</a>
+								<a href="#" class="teacher">讲师：李然</a>
+								<span class="price">¥ 600.00</span>
+							</div>
+						</div>
+				</div>
+				<!-- 5.2、热门课程 -->
+				<div class="header">
+					<h3>热门课程</h3>
+					<span></span>
+					<a href="#">更多</a>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/01.jpg"></a>
+							<a href="#" class="title">12-微信小程序开发</a>
+							<a href="#" class="teacher">讲师：程涛</a>
+							<span class="price">¥ 599.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/02.jpg""></a>
+							<a href="#" class="title">11-Unity地形搭建</a>
+							<a href="#" class="teacher">讲师：张东</a>
+							<span class="price">¥ 600.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/03.jpg"></a>
+							<a href="#" class="title">10-UI控件之基础控件</a>
+							<a href="#" class="teacher">讲师：李然</a>
+							<span class="price">¥ 450.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/04.jpg"></a>
+							<a href="#" class="title">09-微信小程序高级</a>
+							<a href="#" class="teacher">讲师：成亮</a>
+							<span class="price">¥ 200.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/05.jpg"></a>
+							<a href="#" class="title">05-零基础绘图入门(上)</a>
+							<a href="#" class="teacher">讲师：成亮</a>
+							<span class="price">¥ 350.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/06.jpg"></a>
+							<a href="#" class="title">06-jQuery操作DOM(上)</a>
+							<a href="#" class="teacher">讲师：李然</a>
+							<span class="price">¥ 600.00</span>
+						</div>
+					</div>
+				    <div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/01.jpg"></a>
+							<a href="#" class="title">12-微信小程序开发</a>
+							<a href="#" class="teacher">讲师：程涛</a>
+							<span class="price">¥ 599.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/02.jpg"></a>
+							<a href="#" class="title">11-Unity地形搭建</a>
+							<a href="#" class="teacher">讲师：张东</a>
+							<span class="price">¥ 600.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/03.jpg"></a>
+							<a href="#" class="title">10-UI控件之基础控件</a>
+							<a href="#" class="teacher">讲师：李然</a>
+							<span class="price">¥ 450.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/04.jpg"></a>
+							<a href="#" class="title">09-微信小程序高级</a>
+							<a href="#" class="teacher">讲师：成亮</a>
+							<span class="price">¥ 200.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/05.jpg"></a>
+							<a href="#" class="title">05-零基础绘图入门(上)</a>
+							<a href="#" class="teacher">讲师：成亮</a>
+							<span class="price">¥ 350.00</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="course">
+							<a href="#" class="pic"><img src="img/course/06.jpg"></a>
+							<a href="#" class="title">06-jQuery操作DOM(上)</a>
+							<a href="#" class="teacher">讲师：李然</a>
+							<span class="price">¥ 600.00</span>
+						</div>
+					</div>
+				</div>
+				<!-- 5.3、名师堂 -->
+				<div class="header">
+					<h3>名师堂</h3>
+					<span></span>
+					<a href="#">更多</a>
+				</div>
+				<!-- 注意：.col-lg-5-1不是layout.css定义的标准布局系统，而是专门定制的“一行五列”的专用列  -->
+				<div class="row teacher-list">
+					<div class="col-lg-5-1">
+						<div class="teacher">
+							<a href="#" class="pic"><img src="img/teacher/cl.jpg"></a>
+							<a href="#" class="tname">讲师：程亮</a>
+							<a href="#" class="maincourse">主讲：WEB全栈开发</a>
+						</div>
+					</div>
+					<div class="col-lg-5-1">
+						<div class="teacher">
+							<a href="#" class="pic"><img src="img/teacher/lr.jpg"></a>
+							<a href="#" class="tname">讲师：李然</a>
+							<a href="#" class="maincourse">主讲：高级网页设计</a>
+						</div>
+					</div>
+					<div class="col-lg-5-1">
+						<div class="teacher">
+							<a href="#" class="pic"><img src="img/teacher/zd.jpg"></a>
+							<a href="#" class="tname">讲师：张东</a>
+							<a href="#" class="maincourse">主讲：JS高级编程</a>
+						</div>
+					</div>
+					<div class="col-lg-5-1">
+						<div class="teacher">
+							<a href="#" class="pic"><img src="img/teacher/ct.jpg"></a>
+							<a href="#" class="tname">讲师：程涛</a>
+							<a href="#" class="maincourse">主讲：移动APP开发</a>
+						</div>
+					</div>
+					<div class="col-lg-5-1">
+						<div class="teacher">
+							<a href="#" class="pic"><img src="img/teacher/jyx.jpg"></a>
+							<a href="#" class="tname">讲师：纪盈鑫</a>
+							<a href="#" class="maincourse">主讲：前端框架开发</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 6.底部条: bottombar -->
+		<div class="bottombar">
+			<div class="container">
+				<!-- 底部功能菜单 -->
+				<div class="row">
+					<div class="col-lg-7 col-md-12 col-sm-12">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">关于i前端</h4>
+								<ul class="fn-menu">
+									<li><a href="#">发展历程</a></li>
+									<li><a href="#">管理团队</a></li>
+									<li><a href="#">企业文化</a></li>
+									<li><a href="#">加入我们</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">新手帮助</h4>
+								<ul class="fn-menu">
+									<li><a href="#">学员账号</a></li>
+									<li><a href="#">选课流程</a></li>
+									<li><a href="#">网报流程</a></li>
+									<li><a href="#">上课地点</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">常见问题</h4>
+								<ul class="fn-menu">
+									<li><a href="#">如何注册</a></li>
+									<li><a href="#">如何搜课</a></li>
+									<li><a href="#">如何报名</a></li>
+									<li><a href="#">如何缴费</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">联系我们</h4>
+								<ul class="fn-menu">
+									<li><a href="#">校区电话</a></li>
+									<li><a href="#">意见建议</a></li>
+									<li><a href="#">联系邮箱</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-12 col-sm-12">
+						<div class="contact">
+							<span class="fa fa-phone"></span>
+							<div class="hotline">
+								<p>客服热线</p>
+								<p>4008-220-220 ( 09:00 - 24:00 )</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 版权声明 -->
+				<div class="row hidden-sm">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="copyright">
+							<!-- &copy; 转义字符 -->
+							<!-- ©-版权    ™-商标    ®-注册 -->
+							Copyright © 2016 iqianduan.com, All Rights Reserved 版权所有 <br />
+							北京前端教育科技有限公司　京ICP备123456号-1 京公网安备110180201608号
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

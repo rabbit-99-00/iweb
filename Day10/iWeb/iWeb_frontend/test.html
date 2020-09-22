@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片竖直居中-弹性布局</title>
+		<style>
+			.box {
+				border: 1px solid #000;
+				width: 30%;
+				height: 250px;
+				/* line-height: 250px; 方式1 */
+				/* display: table-cell;  vertical-align:middle; 方式3 */
+				display: flex;  /* 父元素：弹性盒子 */
+				align-items: center;  /* 子元素对齐：居中 */
+			}
+
+			img {
+				/* flex: 1; /* 弹性占比 */
+				width: 100%;
+				/* width: 100%;margin-top: 50px; 方式2 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/logo.png" alt="">
+		</div>
+	</body>
+</html>
