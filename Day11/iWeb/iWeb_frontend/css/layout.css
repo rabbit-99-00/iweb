@@ -1,0 +1,278 @@
+/* layout.css ：项目的布局系统相关class —— 仿写Bootstrap的代码 */
+.container {  /* (固)定宽(度)容器 */
+	display: block;  /* 块级元素 */
+	margin-left: auto;
+	margin-right: auto;  /* 水平居中 */
+	/* border: 1px solid red;  /* 用来测试 */
+	
+	overflow: hidden;  /* 溢出内容(.row 左右的外间距——因.col 间的槽宽造成的)全部隐藏 */
+}
+
+.container-fluid {  /* 流式容器——宽度随内容改变 */
+	display: block;
+	width: 100%;
+}
+
+/* 使用内容生成，防止子元素 margin , container-fluid 溢出 */
+.container:before,
+
+.container:after,
+.container-fluid:before,
+.container-fluid:after {
+	content: '';
+	display: table;  /* 呈现效果为表格 */
+}
+
+/* 容器在PC屏幕下的尺寸 */
+@media screen and (min-width:1024px) {
+	.container {
+		width: 992px;
+	}
+}
+
+/* 容器在PAD屏幕下的尺寸 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.container {
+		width: 750px;
+	}
+}
+
+/* 容器在PHONE屏幕下的尺寸 */
+@media screen and (max-width:767px) {
+	.container {
+		width: 100%;
+	}
+}
+
+/* 仿写Bootstrap框架提供了一套“响应式网格布局系统相关类” */
+/* 基本原理 ：把一行均分为12列，可以的分法：
+   两列：1+11、2+10、3+9、4+8、5+7、6+6、7+5、8+4、9+3、10+2、11+1
+   三列：1+10+1、2+8+2、3+6+3、4+4+4
+   四列：3+3+3+3、1+5+5+1、2+4+4+2
+   五列：1+2+6+2+1
+   六列：2+2+2+2+2+2、1+2+3+3+2+1
+ */
+/* 
+ PC：large - lg
+ PAD：medium - md
+ PHONE：small - sm
+ */
+/* row表示布局中的一行 */
+.row {
+	/* 1em 的槽宽 */
+	margin-left: -1em;  /* 抵消最左侧的列的 padding-left */
+	margin-right: -1em;  /* 抵消最左侧的列的 padding-right */
+}
+
+.row:after {  /* 在行的尾部生成一个新“儿子”，清除其他列由于浮动导致的行高坍塌问题 */
+    content: '';
+	display: block;
+	clear: both;
+}
+
+/* col表示布局中的一列 */
+.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,
+.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,
+.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,
+.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,
+.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,
+.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,
+/* 不是bootstrap定义的标准布局系统，专门定制的“一行五列”的专用列 */
+.col-lg-5-1,.col-lg-5-2,.col-lg-5-3,.col-lg-5-4,.col-lg-5-5,
+.col-sm-5-1,.col-sm-5-2,.col-sm-5-3,.col-sm-5-4,.col-sm-5-5 {
+	float: left;  /* 浮动之后两个列才能处于同一列中 */
+	padding: 0 1em;  /* 为所有的列添加 1em 的横向留白，组成 2em 的槽宽(gutter) */
+}
+
+/* 容器在PC屏幕下的尺寸 */
+@media screen and (min-width:1024px) {
+	.col-lg-1 {
+		width: 8.333333333%;  /* 1/12 */
+	}
+
+	.col-lg-2 {
+		width: 16.66666666%;  /* 2/12 */
+	}
+
+	.col-lg-3 {
+		width: 25%;  /* 3/12 */
+	}
+
+	.col-lg-4 {
+		width: 33.333333333%;  /* 4/12 */
+	}
+
+	.col-lg-5 {
+		width: 41.666666666%;  /* 5/12 */
+	}
+
+	.col-lg-6 {
+		width: 50%;  /* 6/12 */
+	}
+
+	.col-lg-7 {
+		width: 58.333333333%;  /* 7/12 */
+	}
+
+	.col-lg-8 {
+		width: 66.666666666%;  /* 8/12 */
+	}
+
+	.col-lg-9 {
+		width: 75%;  /* 9/12 */
+	}
+
+	.col-lg-10 {
+		width: 83.333333333%;  /* 10/12 */
+	}
+
+	.col-lg-11 {
+		width: 91.666666666%;  /* 11/12 */
+	}
+
+	.col-lg-12 {
+		width: 100%;  /* 12/12 */
+	}
+	
+	.col-lg-5-1 {
+		width: 20%; /* 1/5 */
+	}
+	
+	.col-lg-5-2 {
+		width: 40%; /* 2/5 */
+	}
+	
+	.col-lg-5-3 {
+		width: 60%; /* 3/5 */
+	}
+	
+	.col-lg-5-4 {
+		width: 80%; /* 4/5 */
+	}
+	
+	.col-lg-5-5 {
+		width: 100%; /* 5/5 */
+	}
+}
+
+/* 容器在PAD屏幕下的尺寸 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.col-md-1 {
+		width: 8.333333333%;  /* 1/12 */
+	}
+	
+	.col-md-2 {
+		width: 16.66666666%;  /* 2/12 */
+	}
+	
+	.col-md-3 {
+		width: 25%;  /* 3/12 */
+	}
+	
+	.col-md-4 {
+		width: 33.333333333%;  /* 4/12 */
+	}
+	
+	.col-md-5 {
+		width: 41.66666666%;  /* 5/12 */
+	}
+	
+	.col-md-6 {
+		width: 50%;  /* 6/12 */
+	}
+	
+	.col-md-7 {
+		width: 58.333333333%;  /* 7/12 */
+	}
+	
+	.col-md-8 {
+		width: 66.66666666%;  /* 8/12 */
+	}
+	
+	.col-md-9 {
+		width: 75%;  /* 9/12 */
+	}
+	
+	.col-md-10 {
+		width: 83.333333333%;  /* 10/12 */
+	}
+	
+	.col-md-11 {
+		width: 91.66666666%;  /* 11/12 */
+	}
+	
+	.col-md-12 {
+		width: 100%;  /* 12/12 */
+	}
+}
+
+/* 容器在PHONE屏幕下的尺寸 */
+@media screen and (max-width:767px) {
+	.col-sm-1 {
+		width: 8.333333333%;  /* 1/12 */
+	}
+	
+	.col-sm-2 {
+		width: 16.66666666%;  /* 2/12 */
+	}
+	
+	.col-sm-3 {
+		width: 25%;  /* 3/12 */
+	}
+	
+	.col-sm-4 {
+		width: 33.333333333%;  /* 4/12 */
+	}
+	
+	.col-sm-5 {
+		width: 41.66666666%;  /* 5/12 */
+	}
+	
+	.col-sm-6 {
+		width: 50%;  /* 6/12 */
+	}
+	
+	.col-sm-7 {
+		width: 58.333333333%;  /* 7/12 */
+	}
+	
+	.col-sm-8 {
+		width: 66.66666666%;  /* 8/12 */
+	}
+	
+	.col-sm-9 {
+		width: 75%;  /* 9/12 */
+	}
+	
+	.col-sm-10 {
+		width: 83.333333333%;  /* 10/12 */
+	}
+	
+	.col-sm-11 {
+		width: 91.66666666%;  /* 11/12 */
+	}
+	
+	.col-sm-12 {
+		width: 100%;  /* 12/12 */
+	}
+	
+	.col-sm-5-1 {
+		width: 20%; /* 1/5 */
+	}
+	
+	.col-sm-5-2 {
+		width: 40%; /* 2/5 */
+	}
+	
+	.col-sm-5-3 {
+		width: 60%; /* 3/5 */
+	}
+	
+	.col-sm-5-4 {
+		width: 80%; /* 4/5 */
+	}
+	
+	.col-sm-5-5 {
+		width: 100%; /* 5/5 */
+	}
+}
