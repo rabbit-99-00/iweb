@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>渐变动画</title>
+		<style>
+			.box {
+				background: red;
+				width: 50px;
+				height: 100px;
+				transform: translateX(0);
+				transition: all 5s;
+			}
+
+			.box.change {
+				width: 400px;
+				height: 200px;
+				transform: translateX(150px);
+				background: springgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<button data-change="long">变宽</button>
+		<button data-change="short">变窄</button>
+		
+		<script type="text/javascript">
+			document.querySelector('[data-change="long"]').onclick=function() {
+				document.querySelector('.box').classList.add('change');
+			}
+			document.querySelector('[data-change="short"]').onclick=function() {
+				document.querySelector('.box').classList.remove('change');
+			}
+		</script>
+	</body>
+</html>

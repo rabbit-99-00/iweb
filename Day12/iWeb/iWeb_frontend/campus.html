@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="icon" href="./img/logo.ico" />
+		<title>校区——i前端</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/scaffolding.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/components.css">
+
+		<link rel="stylesheet" href="css/campus.css">
+	</head>
+	<body>
+		<!-- 1.最顶部的“灰色条”: topbar -->
+		<div class="topbar hidden-sm">
+			<div class="container">
+				<div class="text-right">
+					<a href="#" class="topbar-item">
+						<span class="fa fa-star"></span>
+						收藏i前端
+					</a>
+					<a href="#" class="topbar-item">
+						<span class="fa fa-lg fa-mobile"></span>
+						<span style="color: #f60;">下载手机客户端</span>
+					</a>
+					<span class="topbar-item">
+						<span class="fa fa-envelope"></span>
+						反馈邮箱：iweb@126.com
+					</span>
+					<span class="topbar-item">
+						<span class="fa fa-fax"></span>
+						客服热线：4008-200-200
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- 2.搜索条: searchbar -->
+		<div class="searchbar">
+			<div class="container">
+				<div class="row">
+					<!-- 左侧的LOGO -->
+					<div class="col-lg-2 col-sm-2 logo-container">
+						<a href="index.html">
+							<img class="logo hidden-sm" src="img/logo.png">
+							<img class="logo_reverse hidden-lg hidden-md" src="img/logo_reverse.png">
+						</a>
+					</div>
+					<!-- 靠右对齐的搜索框和 购物车按钮(PHONE屏幕下隐藏) -->
+					<div class="col-lg-10 col-sm-8">
+						<!-- 搜索框 -->
+						<div class="search">
+							<!-- placeholder : 占位符 -->
+							<input placeholder="课程搜索" class="search-input">
+							<button class="search-button">
+								<span class="fa fa-search fs"></span>
+							</button>
+						</div>
+						<!-- 购物车 -->
+						<div class="myCart hidden-sm">
+							<span class="fa fa-lg fa-shopping-cart"></span>
+							我的购物车(0)
+							<span class="fa fa-lg fa-caret-down"></span>
+						</div>
+					</div>
+					<!-- 仅在PHONE屏幕下显示的“汉堡包”按钮 -->
+					<div class="col-sm-2 hidden-md hidden-lg">
+						<sapn data-toggle="nav" class="fa fa-navicon hamburger"></sapn>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 3.导航条: navbar -->
+		<div data-target="nav" class="navbar">
+			<div class="container">
+				<div class="row">
+					<!-- 导航菜单 -->
+					<div class="col-lg-10 col-md-10 col-sm-12">
+						<ul class="menu">
+							<!-- current: 当前页;active: 激活页; -->
+							<li class="active"><a href="index.html">首页</a></li>
+							<li><a href="#">全部课程</a></li>
+							<li><a href="#">基础课程</a></li>
+							<li><a href="#">核心课程</a></li>
+							<li><a href="#">进阶课程</a></li>
+							<li><a href="teacher.html">名师堂</a></li>
+							<li><a href="campus.html">校区</a></li>
+						</ul>
+						<!-- 仅在PHONE屏幕下显示的关闭按钮 -->
+						<!-- 转义字体 &times; -->
+						<!-- FontAwsome字体 fa fa-times -->
+						<span  data-close="nav" class="menu-close hidden-lg hidden-md">&times;</span>
+					</div>
+					<!-- 登录和注册 -->
+					<div class="col-lg-2 col-md-10 hidden-sm">
+						<div class="user-center">
+							<div class="text-center">
+								<a href="login.html">登录</a>
+								<span>|</span>
+								<a href="register.html">注册</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 4.主体部分: mainbar -->
+		<div class="mainbar">
+			<div class="container">
+				<!-- 1.标题栏 -->
+				<div class="header">
+					<a href="index.html">首页</a>
+					<span> > </span>
+					<a href="campus.html">校区</a>
+				</div>
+				<!-- 2. -->
+				<div class="major">
+					<div class="group">
+						<div class="fa fa-map-marker myIcon"></div>
+						<div class="details">
+							<h2>北京中关村中心</h2>
+							<p>校区地址：北京市海淀区北三环西路甲18号（大钟寺附近）中鼎大厦B座7层</p>
+							<p>咨询电话：010-62130963</p>
+							<p>邮编：100098</p>
+						</div>
+					</div>
+					<div class="group">
+						<div class="fa fa-map-marker myIcon"></div>
+						<div class="details">
+							<h2>北京天坛中心</h2>
+							<p>校区地址：北京市崇文区珠市口东大街6号珍贝大厦西侧3层达内科技</p>
+							<p>咨询电话：010-67028668</p>
+							<p>邮编：100050</p>
+						</div>
+					</div>
+					<div class="group">
+						<div class="fa fa-map-marker myIcon"></div>
+						<div class="details">
+							<h2>北京广渠门中心</h2>
+							<p>校区地址：北京市东城区广渠门东广渠家园25号楼启达大厦一层</p>
+							<p>咨询电话：15321130620</p>
+							<p>邮编：100010</p>
+						</div>
+					</div>
+					<div class="group">
+						<div class="fa fa-map-marker myIcon"></div>
+						<div class="details">
+							<h2>北京北京清华园中心</h2>
+							<p>校区地址：北京市海淀区花园路小关街120号万盛商务会馆A区三层</p>
+							<p>咨询电话：010-82676916</p>
+							<p>邮编：100088</p>
+						</div>
+					</div>
+					<div class="group">
+						<div class="fa fa-map-marker myIcon"></div>
+						<div class="details">
+							<h2>北京万寿路中心</h2>
+							<p>校区地址：北京市海淀区万寿路西街2号文博大厦二层达内科技</p>
+							<p>咨询电话：010-82761288</p>
+							<p>邮编：100081</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 5.底部条: bottombar —在PHONE屏幕下隐藏 -->
+		<div class="bottombar hidden-sm">
+			<div class="container">
+				<!-- 底部功能菜单 -->
+				<div class="row">
+					<div class="col-lg-7 col-md-12 col-sm-12">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">关于i前端</h4>
+								<ul class="fn-menu">
+									<li><a href="#">发展历程</a></li>
+									<li><a href="#">管理团队</a></li>
+									<li><a href="#">企业文化</a></li>
+									<li><a href="#">加入我们</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">新手帮助</h4>
+								<ul class="fn-menu">
+									<li><a href="#">学员账号</a></li>
+									<li><a href="#">选课流程</a></li>
+									<li><a href="#">网报流程</a></li>
+									<li><a href="#">上课地点</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">常见问题</h4>
+								<ul class="fn-menu">
+									<li><a href="#">如何注册</a></li>
+									<li><a href="#">如何搜课</a></li>
+									<li><a href="#">如何报名</a></li>
+									<li><a href="#">如何缴费</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<h4 class="fn-menu-header">联系我们</h4>
+								<ul class="fn-menu">
+									<li><a href="#">校区电话</a></li>
+									<li><a href="#">意见建议</a></li>
+									<li><a href="#">联系邮箱</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-12 col-sm-12">
+						<div class="contact">
+							<span class="fa fa-phone"></span>
+							<div class="hotline">
+								<p>客服热线</p>
+								<p>4008-220-220 ( 09:00 - 24:00 )</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 版权声明 -->
+				<div class="row hidden-sm">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="copyright">
+							<!-- &copy; 转义字符 -->
+							<!-- ©-版权    ™-商标    ®-注册 -->
+							Copyright © 2016 iqianduan.com, All Rights Reserved 版权所有 <br />
+							北京前端教育科技有限公司　京ICP备123456号-1 京公网安备110180201608号
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/components.js"></script>
+	</body>
+</html>

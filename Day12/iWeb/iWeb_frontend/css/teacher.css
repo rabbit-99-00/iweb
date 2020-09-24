@@ -1,0 +1,28 @@
+.mainbar {
+	background: #FCFCFC;
+}
+
+.header {
+	width: 992px;
+	height: 36px;
+	margin-top: 5px;
+}
+
+.header a,
+.header span {
+	color: #999999;
+}
+
+h2 {
+	color: #555555;
+	font-weight: normal;
+	border-left: 3px solid #00BE56;
+	padding-left: 1em;
+}
+
+.item {
+	width: 100%;
+	height: 120px;
+	margin: 0 auto;
+	border: 1px solid red;
+}
