@@ -1,0 +1,39 @@
+/* 1. 课程类别列表 */
+.course-types {
+	background: #F5F5F5;
+	padding: 1.5em 1em;
+	font-size: 1.2em;
+	color: #555555;
+	line-height: 1.8em;
+}
+
+.course-types span {
+	float: left;
+}
+
+.course-types ul {
+	margin-left: 6em;
+}
+
+.course-types ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.course-types ul li {
+	float: left;
+	padding: 0 1.5em;
+}
+
+.course-types ul li.active {
+	background: #00BE56;
+}
+
+.course-types ul li.active a {
+	color: #FFFFFF;
+}
+
+.course-list button {
+	background: #00BE56;
+}
