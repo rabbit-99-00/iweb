@@ -1,0 +1,48 @@
+.mainbar {
+	background: #FCFCFC;
+}
+
+.header {
+	width: 992px;
+	height: 36px;
+	margin-top: 5px;
+}
+
+.header a,
+.header span {
+	color: #999999;
+}
+
+.major {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.group {
+	width: 100%;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 1px dashed #CCCCCC;
+	padding-left: 100px;
+}
+
+.myIcon {
+	float: left;
+	color: #82CA65;
+	font-size: 4em;
+	padding: 0.25em 0.75em 0.5em 0.75em;
+}
+
+.details {
+	float: left;
+}
+
+h2 {
+	color: #555555;
+}
+
+p {
+	color: #999999;
+}

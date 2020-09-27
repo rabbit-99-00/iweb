@@ -1,0 +1,507 @@
+/* 多个页面所通用的<组件>必需的样式 */
+/* 1.以下为“顶部的灰色条” */
+.topbar {
+	background: #F9F9F9;
+	border-bottom: 1px solid #EEE;
+	line-height: 36px;
+}
+
+.topbar-item {
+	padding: 0 0.5em;
+	color: #555;
+}
+
+/* 选择“父元素”下的最后一个“子元素” */
+.topbar-item:last-child {
+	padding-right: 0;
+}
+
+/* 2.以下为“LOGO + 搜索条” */
+.logo {
+	margin: 1.5em 0;
+}
+
+.search {
+	/* 保证元素在父元素中竖直居中的方法1: 调整上间距 */
+	/* margin-top: 25px; */
+	
+	/* 保证元素在父元素中竖直居中的方法2: 先向下移到父容器中线以下，再向上微调自身高度的一半儿,但会使浮动失效 */
+	/*position: relative;  /* 相对定位 */
+	position: absolute;  /* 绝对定位,需哟一个有相对定位的父元素 */
+	top: 50%;  /* 上、右、下、左默认对普通元素无效,需要“定位”。 */
+	margin-top: -16px;  /* 向上微调自身高度的一半儿 */
+	right: 200px;  /*距离右边200px（为购物车留出位置）*/
+}
+
+.searchbar > .container {
+	position: relative;  /* 为子元素提供定位标准 */
+}
+
+.search-input {
+	width: 360px;
+	height: 32px;
+	line-height: 32px;
+	/* 美化 */
+	padding: 0 0.6em;
+	font-size: 1.15em;
+	border: 1px solid #CCC;
+	margin-right: 50px;  /* 让出右侧的搜索按钮的空间 */
+}
+
+.search-button {
+	width: 50px;
+	height: 32px;
+	background: #00BE56;
+	color: #FFF;
+	line-height: 32px;
+	border: none;
+	font-size: 1.7em;
+	position: absolute;
+	right: 0; 
+	top: 0; 
+}
+
+.myCart {
+	position: absolute;  /* 绝对定位 */
+	right: 0;
+	top: 50%;
+	height: 32px;
+	margin-top: -16px;
+	border: 1px solid #DDD;
+	background: #F9F9F9;
+	line-height: 32px;
+	padding: 0 0.5em;
+}
+
+.myCart > .fa {
+	color: #00BE56;
+	padding: 0 0.5em;
+}
+
+/* PHONE屏幕下的搜索条：LOGO + Search + Hamburger */
+@media screen and (max-width:767px) {
+	.searchbar {
+		background: #00BE56;
+		border-bottom: 3px solid #B3EFC0;
+		height: 52px;
+		font-size: 1.15em;
+	}
+	
+	.logo-container {
+		height: 52px; /* 容器的高大于内容的高，才可能有竖直居中问题 */
+		display: flex; /* 图片的容器显示模式变为“弹性盒子” */
+		align-items: center; /* 弹性盒子中的子元素居中对齐 */
+	}
+	
+	.logo_reverse {
+		/* flex: 1; */
+		width: 100%;  /* 正常情况下，控制弹性盒子中子元素的尺寸应该使用“弹性占比(flex)”即可
+		——此方式只会拉伸图片的宽，而不改变图片的高，所以此处没有使用 */
+		transform: translateX(12px); /* 变形函数：X轴平移 */
+	}
+	
+	.search {
+		position: relative;  /* 相对定位——为放大镜提供参照物 */
+		margin-top: 9px; /* 为输入框竖直居中增加上间距 */
+		top: 0; /* 清除全局样式中定位相关修改 */
+		right: 0; /* 清除全局样式中定位相关修改 */
+	}
+		
+	.search-input {
+		width: 100%;
+		/* 美化 */
+		padding: 0 3em 0 0.6em;
+		margin-right: 0px;  /* 清楚之前对所有屏幕设定的间距 */
+	}
+	
+	.search-button {
+		background: transparent;
+		color: #00BE56;
+		top: 0px;
+	}
+	
+	/* DIY */
+	.search-button .fs {
+		position: absolute;
+		top: 4px;
+		right: 14px;
+	}
+	
+	.hamburger {
+		color: #FFF;
+		line-height: 52px;
+		font-size: 30px;
+		transform: translateX(2px); /* 变形函数：X轴平移 */
+	}
+}
+
+/* 3.以下为导航条 */
+.navbar {
+	background: #00BE56;
+	border-bottom: 3px solid #B3EFC0;
+	height: 52px;
+	font-size: 1.15em;
+}
+
+.menu {
+	
+}
+
+.menu > li {
+	float: left;
+	line-height: 49px;
+	padding: 0 1.5em;
+}
+
+.menu > li:hover {
+	background: #00B149;
+}
+
+.menu > li.active {
+	background: #00A43D;
+}
+
+.menu > li > a {
+	color: #FFF;
+}
+
+.user-center {
+	background: #55C760;
+	line-height: 49px;
+}
+
+.user-center a,
+.user-center span {
+	color: #FFF;
+}
+
+.user-center a:hover {
+	color: #FFFF9B;
+}
+
+@media screen and (max-width:767px) {
+	/* PHONE屏幕下，“导航条变为：充满”整个屏幕的“半透明区域” */
+	.navbar {
+		transform: translateX(-100%); /* 默认情况下，响应式导航条隐藏在屏幕左侧——向左平移 */
+		transition: all 0.3s;
+		position: fixed; /* 固定定位 */
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.9);
+		height: auto; /* 必须覆盖所有屏幕下高度为52px的设定，高度设为自动 */
+		z-index: 9999; /* 必须足够高才能盖住绝对定位 */
+	}
+	
+	.navbar.active {
+		/* 带.active 的导航条取消平移变形 */
+		transform: translateX(0);
+		/* transition-duration: 0.3s; */
+	}
+	
+	/* DIY : 自己动手做 */
+	.menu {
+		margin-top: 49px;
+	}
+	
+	.menu > li {
+		float: none; /* PHONE屏幕下每个菜单项独占一行 */
+		text-align: center;
+		border-bottom: 1px solid #666;
+	}
+	
+	/* 仅在PHONE屏幕下显示的关闭按钮 */
+	.menu-close {
+		position: absolute;
+		top: 7px;
+		right: 10px;
+		color: #FFF;
+		font-size: 2em;
+	}
+	
+	/* 悬停时，小手光标 */
+	.menu-close:hover {
+		cursor: pointer;
+	}
+}
+
+/* 4.轮播广告 */
+.carouselbar {
+	border-bottom: 4px solid #DDD;
+}
+
+.carousel {
+	position: relative; /* 相对定位，为绝对定位的子元素提供参照物 */
+}
+
+.carousel .items a {
+	display: block; /* 改为块级元素，可以指定宽和高 */
+	width: 100%;
+	height: 380px;
+	background-position: center; /* 背景图的位置 */
+	background-repeat: no-repeat;  /* 背景图仅仅显示一次，不重复，不平铺 */
+}
+
+.carousel .items li:not(.active) { /* 不带.active的li */
+	display: none; /* 隐藏 */
+}
+
+.carousel .indicators {
+	position: absolute;  /*圆形指示器需要在图片上方，不占布局空间 */
+	bottom: 20px;
+	left: 50%;  /* 固定定位的元素水平居中 */
+	margin-left: -72px;  /* 向左微调自身一半的宽度 18+18+18+9px */
+}
+.carousel .indicators li {
+	width: 18px;
+	height: 18px;
+	background: #CCC;
+	border-radius: 50%;  /* 边框圆角半径为尺寸的一半 */
+	float: left;
+	margin: 0 9px;
+	cursor: pointer; /* 鼠标悬停时，光标变为“小手” */
+}
+
+.carousel .indicators li.active {
+	background: #FF9300;
+}
+
+.carousel .controls {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.carousel .controls .prev,
+.carousel .controls .next {
+	position: absolute;
+	width: 54px;
+	height: 94px;
+	font-size: 6em;
+	line-height: 94px;  /* 文字竖直居中 */
+	text-align: center; /* 文字水平居中 */
+	/* opacity: 0.5;  会导致当前元素及其中的文字/图片都透明 */
+	background: rgba(0,0,0,0.3);  /* 仅仅是背景半透明 */
+	color: #FFF;
+	margin-top: -47px;
+}
+
+/* 所有屏幕下，上/下一张切换控件的位置 */
+.carousel .controls .prev {
+	margin-left: -496px;
+}
+
+.carousel .controls .next {
+	margin-left: 442px;
+}
+
+.carousel .controls .prev:hover,
+.carousel .controls .next:hover {
+	background: rgba(0,0,0,0.6);
+}
+
+/* PHONE屏幕下，轮播地设定 */
+@media screen and (max-width:767px) {
+	.carousel .items a {
+		height: 190px;
+		/* 背景图原高380px，此处容器较小，让背景图覆盖 */
+		background-size: cover;  /* 背景大小：覆盖 */
+	}
+	
+	.carousel .controls {
+		position: static; /* 取消.prev 和.next 父元素的绝对定位，
+		让他俩的定位参照物设定为.carousel 即可 */
+	}
+	
+	/* PHONE屏幕下，上/下一张切换控件的位置 */
+	.carousel .controls .prev {
+		margin-left: 0; /* 清除全局margin-left的设置 */
+		left: 0;
+		top: 50%;
+	}
+	
+	.carousel .controls .next {
+		margin-left: 0; /* 清除全局margin-left的设置 */
+		right: 0;
+		top: 50%;
+	}
+}
+
+/* PAD屏幕下，上/下一张切换控件的位置 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.carousel .controls .prev {
+		margin-left: -375px; /* 向左移动容器的一半 */
+	}
+	
+	.carousel .controls .next {
+		margin-left: 321px; /* 向右移动容器的一半减去自己的宽 */
+	}
+}
+
+/* 6.底部条 */
+.bottombar {
+	background: #EEE;
+}
+
+/* 选择“底部条”中的“容器”下的第一个.row元素 */
+.bottombar>.container>.row:first-child {
+	border-bottom: 1px solid #DDD;
+}
+
+.bottombar .fn-menu-header {
+	margin-bottom: 5px;
+	color: #555;
+}
+
+.bottombar .fn-menu {
+	color: #666;
+	line-height: 1.8em;
+}
+
+.bottombar .contact {
+	margin-top: 40px;
+}
+
+.bottombar .contact .fa-phone {
+	color: #00BE56;
+	font-size: 4em;
+	float: left;
+}
+
+.bottombar .contact .hotline {
+	margin-left: 4em;
+	font-size: 1.4em;
+	line-height: 0.8em;
+	color: #666;
+}
+
+.bottombar .copyright {
+	text-align: center;
+	color: #999;
+	font-size: .8em;
+	line-height: 2em;
+	margin: 1em 0 1.3em 0;
+}
+
+/* 7.PHONE屏幕下的页签条 */
+@media screen and (max-width:767px) {
+	/* 让body在底部留白，高度为.tabbar 的高度 */
+	/* 防止body 的底部内容被.tabbar 覆盖 */
+	body {
+		margin-bottom: 64px;
+	}
+	
+	.tabbar {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		top: ;
+		height: 64px;  /* 52或64或81 */
+		background: #F8F6FA;
+		border-top: #D2CFCC;
+	}
+	
+	.tab {
+		color: #CCC;
+		text-align: center;
+		padding: 7px 0 0;
+	}
+	
+	.tab.active {
+		color: #00BE56;
+	}
+	
+	.tab .fa {
+		font-size: 3em;
+	}
+}
+
+/* 8.面包屑 */
+/* 内容生成 */
+.breadcrumb ul:after {
+	/* 在ul的尾部生成一个新的元素 */
+	/* 目的: 清除子元素对父元素的影响 */
+	/* 影响: 子元素li浮动,导致父元素ul高度丢失 */
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.breadcrumb ul li {
+	float: left;
+	line-height: 3em;
+}
+
+/* 面包屑中的每个li(除了最后一个)尾部生成一个">" */
+.breadcrumb ul li:not(:last-child):after {
+	content: '>';
+	margin: 0 0.5em;
+	color: #999999;
+}
+
+.breadcrumb ul li a {
+	color: #999999;
+}
+
+/* 9.分页条 */
+.pager {
+	padding: 3em 0;
+	
+	/* DIY */
+	/* padding: 1.5em 0; */
+}
+
+.pager ul {
+	text-align: center;
+}
+
+.pager ul li {
+	/* 注意：让li变为“行内块元素” */
+	/* 既可以多个li共处一行，也可以指定尺寸/间距 */
+	/* 不足1. 老IE不支持 */
+	/* 不足2. 换行(HTML中只要有空白字符)，有空格 */
+	display: inline-block;
+	
+	border: 1px solid #DDDDDD;
+	padding: 0.3em 0.7em;
+	
+	cursor: pointer;
+}
+
+.pager ul li a {
+	color: #999999;
+}
+
+/* 激活状态 */
+.pager ul li.active {
+	background: #99D989;
+	border: 1px solid #99D989;
+	cursor: default;
+}
+
+/* 激活状态 */
+.pager ul li.active a {
+	color: #FFFFFF;
+	/* 将超链接的默认光标效果(小手)转换为平时的普通效果 */
+	cursor: default;
+}
+
+/* 禁用状态 */
+.pager ul li.disabled {
+	background: #F4F4F4;
+	/* border: 1px solid #DDDDDD; */
+	cursor: default;
+}
+
+/* 禁用状态 */
+.pager ul li.disabled a {
+	color: #DDDDDD;
+	/* 将超链接的默认光标效果(小手)转换为平时的普通效果 */
+	cursor: default;
+}
+
+/* 当鼠标悬停于"非".active项 / "非".disabled项 上方时,边框变色 */
+.pager ul li:not(.active):hover
+.pager ul li:not(.disabled):hover
