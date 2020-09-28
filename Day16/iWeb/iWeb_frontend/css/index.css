@@ -1,0 +1,114 @@
+/* 5.主体部分 */
+.mainbar {
+	border-bottom: 1px solid #DDD;
+}
+
+.mainbar .header {
+	border-bottom: 3px solid #DDD;
+	position: relative;
+}
+
+.mainbar .header h3 {
+	font-weight: normal;  /* 标题字取消加粗 normal: 正常 */
+	margin-bottom: 0.5em;
+	padding: 0 0.8em;
+}
+
+.mainbar .header span {
+	width: 6.5em;
+	height: 3px;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	background: #00BE56;
+}
+
+.mainbar .header a {
+	position: absolute;
+	right: 0;
+	bottom: 0.3em;
+}
+
+.mainbar .course {
+	padding: 1.2em 0;  /* 每列中的 .course 需要自己提供上下间距 */
+	/* border: 1px solid #000; /* 测试用的 */
+}
+
+.mainbar .course .pic img {
+	width: 100%;
+}
+
+.mainbar .course .title {
+	display: block; /* 让课程标题占一整行 */
+	line-height: 1.8em;
+	font-size: 1.2em;
+}
+
+.mainbar .course .teacher {
+	display: block; /* 让讲师姓名占一整行 */
+	font-size: 0.8em;
+	color: #999;
+	line-height: 1.8em;
+}
+
+.mainbar .course .price {
+	display: block; /* 让价格占一整行 */
+	font-weight: bold; /* 字体加粗 */
+	color: #FF5A00;
+	font-size: 1.25em;
+}
+
+.mainbar .col-lg-5-1 .teacher {
+	padding: 2em 0;
+}
+
+.mainbar .teacher .pic img {
+	width: 100%;
+}
+
+.mainbar .teacher .tname {
+	font-size: 1.2em;
+	color: #555;
+	line-height: 2.2em;
+	display: block;
+	text-align: center;
+}
+
+.mainbar .teacher .maincourse {
+	font-size: 0.8em;
+	color: #999;
+	display: block;
+	text-align: center;
+}
+
+/* 在PAD屏幕下，讲师列表一行只能显示3.5个讲师信息，溢出内容水平滚动 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.teacher-list {
+		white-space: nowrap; /* 取消自动换行 */
+		overflow-x: auto; /* 水平方向内容溢出时显示滚动条 */
+		margin-left: 0; /* 取消.rou左边带的margin */
+		margin-right: 0; /* 取消.rou右边带的margin */
+	}
+	
+	.col-lg-5-1 {
+		float: none; /* 取消列浮动——浮动元素只要空间不够必然转到下一行 */
+		width: 214px; /* 根据PAD屏幕下的.container宽度(750px)，设置内容宽 */
+		display: inline-block; /* 将列设置为“行内块”——就可以在一行中出现多个列 */
+	}
+}
+
+/* 在PHONE屏幕下，讲师列表一行大约能显示2.5个讲师信息，溢出内容水平滚动 */
+@media screen and (max-width:767px) {
+	.teacher-list {
+		white-space: nowrap; /* 取消自动换行 */
+		overflow-x: auto; /* 水平方向内容溢出时显示滚动条 */
+		margin-left: 0; /* 取消.rou左边带的margin */
+		margin-right: 0; /* 取消.rou右边带的margin */
+	}
+	
+	.col-lg-5-1 {
+		float: none; /* 取消列浮动——浮动元素只要空间不够必然转到下一行 */
+		width: 140px; /* 根据PAD屏幕下的.container宽度(100% [基本都在 320px ~ 350px ~ 375px 之间])，设置内容宽 */
+		display: inline-block; /* 将列设置为“行内块”——就可以在一行中出现多个列 */
+	}
+}

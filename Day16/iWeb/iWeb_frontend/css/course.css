@@ -1,0 +1,165 @@
+/* 1. 课程类别列表 */
+.course-types {
+	background: #F5F5F5;
+	padding: 1.5em 1em;
+	font-size: 1.2em;
+	color: #555555;
+	line-height: 1.8em;
+}
+
+.course-types span {
+	float: left;
+}
+
+.course-types ul {
+	margin-left: 6em;
+}
+
+.course-types ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.course-types ul li {
+	float: left;
+	padding: 0 1.5em;
+}
+
+.course-types ul li.active {
+	background: #00BE56;
+}
+
+.course-types ul li.active a {
+	color: #FFFFFF;
+}
+
+/* 2.课程列表 */
+.course-list {
+	margin-top: 1.5em;
+	border-top: 2px solid #9EF08C;
+}
+
+.course {
+	padding: 2em 0;
+	border-bottom: 1px dotted #CCCCCC; /* solid实线 / dashed虚线 / dotted圆点 */
+}
+
+.course .pic {
+	width: 100%; /* 图片充满一列 */
+}
+
+.course .details {
+	color: #555555;
+	/* 相对定位后成为“价格”的绝地定位参照物 */
+	position: relative;
+}
+
+.course .details h3 {
+	margin-bottom: ;
+}
+
+.course .details p {
+	line-height: 2em;
+	margin: 0; /* 取消p元素自带的margin */
+}
+
+/* Do It Yourself */
+.course .details p a {
+	color: #FF6600;
+}
+
+.course .details span {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	color: #FF6600;
+	font-size: 1.8em;
+	margin-top: -0.9em; /* 向上微调自身高度的一半 */
+}
+
+/* 按钮属于行内块元素，可以随着内容右对齐 */
+.course .jump {
+	/* height: 100%; /*无效——列的高度只能靠内容撑起来 */
+	/* position: relative; */
+	text-align: right; /* 父容器文本右对齐 */
+}
+
+.course .jump2details {
+	/* position: absolute; /* 按钮绝对定位后，不占布局空间，父容器高度就会丢失，top使用百分比作值就无效了 */
+	margin-top: 46px; /* 控制上外间距，实现“竖直居中” */
+	/* 不足：父元素高度不能改变 */
+	background: #55C760;
+	border: none;
+	color: #FFFFFF;
+	padding: 0.8em 2em;
+}
+
+/* PAD屏幕下,课程呢列表样式的调整 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.course .details h3 {
+		margin: 0 0 0.8em;
+	}
+	
+	.course .details p {
+		line-height: 1.7em;
+	}
+	
+	.course .jump2details {
+		margin-top: 32px;
+	}
+}
+
+/* PHONE屏幕下,课程呢列表样式的调整 */
+@media screen and  (max-width:767px) {
+	.course .details h3 {
+		margin: 0 0 0.5em;
+	}
+	
+	.course .details p {
+		line-height: 1.3em;
+	}
+	
+	.course .details span {
+		position: static;
+		font-size: 1.2em;
+		/* span默认是行内(inline)元素，上/下margin是无效的 */
+		display: block;
+		margin-top: 1.4em;
+	}
+	
+	.course {
+		/* 相对定位，为“查看详情”提供绝对定位的参照物 */
+		position: relative;
+		padding: 1em 0;
+	}
+	
+	.course .jump {
+		position: absolute;
+		right: 1em;
+		bottom: 1em;
+	}
+	
+	.course .jump2details {
+		padding: 0.4em 1em;
+		margin-top: 0;
+	}
+	
+	.course-types span {
+		float: none;
+	}
+	
+	.course-types ul {
+		margin-left: 0;
+		border: 1px solid #00BE56;
+		display: flex;
+	}
+	
+	.course-types ul li {
+		/* padding: 0 0.8em; */
+		padding: 0; /* 清除全局样式中添加的左右padding */
+		/* 均分 */
+		flex: 1;
+		text-align: center;
+	}
+}
