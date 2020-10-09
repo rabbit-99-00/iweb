@@ -1,0 +1,124 @@
+/* 1.主体部分 */
+.mainbar {
+	background: #FCFCFC;
+}
+
+/* 解决.mainbar里.container的margin越界问题 */
+.mainbar:before,
+.mainbar:after {
+	content: '';
+	display: table;
+}
+
+.mainbar .container {
+	background: #FFFFFF;
+	margin: 3em auto 3.5em;
+	border: 1px solid #E6E6E6;
+	/* 边框外侧有外阴影：1.水平方向上的偏移量 2.竖直方向上的偏移量 3.阴影的半径 4.阴影的颜色 */
+	box-shadow: 0 0 2px #E6E6E6;
+	/* 边框圆角半径 */
+	border-radius: 2px;
+	
+	padding: 1em 7em 2em; /* padding: 1em 7em 2em 7em; */
+}
+
+.form .header {
+	font-size: 1.4em;
+	color: #FF9300;
+	line-height: 4em;
+	border-bottom: 1px solid #DDDDDD;
+	text-align: center;
+}
+
+.form .header .jump-to-login {
+	float: right;
+	color: #757575;
+	font-size: 0.6em;
+}
+
+.form .header a {
+	color: #FF5A00;
+}
+
+.form .row {
+	line-height: 2.9em;
+	padding: 0.6em 0;
+}
+
+.form label {
+	/* 转化显示模式 */
+	/* label默认是inline元素,无法指定左右对齐,必须转换为块级元素 */
+	display: block;
+	text-align: right;
+}
+
+.form input[type="email"],
+.form input[type="tel"],
+.form input[type="password"],
+.form input[type="text"] {
+	width: 100%;
+	padding: 0.8em 1em;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px; /* 圆角边框半径 */
+	vertical-align: middle; /* 竖直方向上居中对齐 */
+}
+
+.form span.error {
+	color: #FF0000;
+}
+
+.form span.success {
+	color: #00C160;
+}
+
+.form .captcha {
+	/* 宽会随着高等比例缩放 */
+	height: 34.8px;
+	/* 图片与后面的图标文字竖直居中对齐 */
+	vertical-align: middle;
+}
+
+.form .code {
+	position: relative;
+}
+.form .refresh {
+	font-size: 2em;
+	color: #00BE56;
+	cursor: pointer; /* 鼠标悬停时呈现“小手”形状 */
+	line-height: 34.8px;
+	position: absolute;
+	top: 1px;
+}
+
+/* PHONE屏幕下,调整间距及文本对齐 */
+@media screen and (max-width: 767px) {
+	.form .row {
+		line-height: 2em;
+	}
+	
+	.form .row.reg {
+		text-align: center;
+	}
+	
+	.form label {
+		text-align: left;
+	}
+	
+	.mainbar .container {
+		padding: 0 1em 1em;
+	}
+}
+
+.form .btn-submit {
+	width: 100%;
+	height: 36px;
+	background: #5AB33F;
+	color: #FFFFFF;
+	font-size: 1.6em;
+	border: none;
+	outline: none;
+}
+
+.form .btn-submit:hover {
+	background: #4BA634;
+}

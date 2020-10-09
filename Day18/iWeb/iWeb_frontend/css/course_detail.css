@@ -1,0 +1,120 @@
+/* 1.课程介绍的头部 */
+.course-header {
+	padding: 1.5em 0;
+}
+
+.course-header .pic {
+	width: 100%;
+}
+
+.course-header h1 {
+	color: #555555;
+	margin: 0;
+}
+
+.course-header .items {
+	margin: 1em 0;
+	padding: 1em 1em;
+	background: #F5F5F5;
+	line-height: 2em;
+}
+
+.course-header .items a {
+	color: #FF5A00;
+}
+
+.course-header .items a:hover {
+	color: #FF0000; /* F00 */
+}
+
+.course-header .price {
+	line-height: 3.6em;
+}
+
+.course-header .price span {
+	font-size: 2em;
+	color: #FF5A00;
+}
+
+.course-header .add-to-cart {
+	padding: 0.8em 2em;
+	color: #FFFFFF;
+	background: #FF8300;
+	border: none;
+	outline: none;
+}
+
+.course-header .add-to-favorite {
+	padding: 0.8em 2em;
+	color: #555555;
+	background: #E0E0E0;
+	border: none; /* 边框 */
+	/* 清除按钮或输入框获得焦点时,默认自带的蓝色的轮廓 */
+	outline: none; /* 轮廓 */
+	margin-left: 1em;
+}
+
+.course-details {
+	padding: 2em 0;
+}
+
+.course-details .course-details-header {
+	position: relative;
+	border-bottom: 3px solid #DDDDDD;
+	color: #555555;
+	padding: 0.7em 1em;
+}
+
+.course-details .course-details-header h3 {
+	margin: 0;
+	color: #555555;
+	font-size: 1.4em;
+}
+
+.course-details .course-details-header span {
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	background: #00BE56;
+	width: 8em;
+	height: 3px;
+}
+
+.course-details .course-details-body {
+	line-height: 1.8em;
+	padding: 1em 2em;
+	color: #666666;
+}
+
+.course-details .course-details-body P {
+	/* 每个段落最开头“文本缩进(indent)”两个文字的空间 */
+	text-indent: 2em;
+}
+
+/* PAD屏幕下,课程介绍的头部需要调整文字的高度 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.course-header .items {
+		margin: 0.8em 0;
+		padding: 0.8em 1em;
+		line-height: 1.9em;
+	}
+	
+	.course-header .price {
+		line-height: 2.7em;
+	}
+}
+
+/* PHONE屏幕下,课程介绍的图片和文字各处一行中 */
+@media screen and (max-width:767px) {
+	.course-header .pic {
+		padding: 0 1em;
+	}
+	
+	.course-header .course-header-text {
+		padding: 1em 2em; /* 2em是因为槽宽本身就有1em，所以1em是无效的 */
+	}
+	
+	.course-details .course-details-body {
+		padding: 0.3em 1em;
+	}
+}
