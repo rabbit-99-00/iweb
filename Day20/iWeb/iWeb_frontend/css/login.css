@@ -1,0 +1,158 @@
+.mainbar {
+	background: #FCFCFC;
+}
+
+/* 解决.mainbar里.container的margin越界问题 */
+.mainbar:before,
+.mainbar:after {
+	content: '';
+	display: table;
+}
+
+.mainbar .container {
+	background: #FFFFFF;
+	margin: 3em auto 3.5em;
+	border: 1px solid #E6E6E6;
+	box-shadow: 0 0 2px #E6E6E6;
+	border-radius: 2px;
+}
+/* 表单头部 */
+.header {
+	margin: 2em 2.5em 1em 2.5em;
+	border-left: 3px solid #77C558;
+	font-size: 1.4em;
+	padding-left: 1em;
+}
+.form {
+	position: relative;
+}
+.form .header img {
+	width: 38.7px;
+	height: 38.7px;
+	position: absolute;
+	top: -60px;
+	right: -60px;
+	clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+@media screen and (max-width:767px) {
+	.form .row .pic {
+		transform: translateX(-100%);
+		transition: all 0.3s;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.9);
+		height: auto;
+		z-index: 9999;
+	}
+	.form .row .pic.active {
+		/* 带.active 的导航条取消平移变形 */
+		transform: translateX(0);
+		/* transition-duration: 0.3s; */
+	}
+	/* .hamburger {
+		color: #FFF;
+		line-height: 52px;
+		font-size: 30px;
+		transform: translateX(2px);
+		position: absolute;
+		top: -60px;
+		right: -60px;
+	} */
+}
+.header span {
+	float: right;
+	color: #757575;
+	font-size: 0.8em;
+}
+.header a {
+	color: #FF5A00;
+}
+
+/* 表单主体左侧 */
+.form .form-header {
+	font-size: 1.4em;
+	color: #555555;
+	margin: 0.5em 2.5em 0.5em 2.5em;
+}
+.form .form-header span.error {
+	float: right;
+	color: #FF0000;
+	font-size: 0.8em;
+}
+.form .form-body {
+	margin-left: 3.5em;
+	margin-right: 3.5em;
+	position: relative;
+}
+.form .form-body input {
+	width: 100%;
+	height: 36px;
+	border: 1px solid #C6EFC2;
+	padding: 1em 3.5em;
+	outline: none;
+}
+.form .form-body span.fa {
+	border: 1px solid #C6EFC2;
+	background: #F5F5F5;
+	width: 36px;
+	height: 36px;
+	font-size: 1.8em;
+	text-align: center;
+	line-height: 36px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.form .form-body span.error {
+	color: #FF0000;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	line-height: 32px;
+	font-size: 1.8em;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.form .btn-login {
+	margin: 45px 0;
+	padding-left: 3.5em;
+	line-height: 40px;
+}
+
+.form .btn-login button {
+	background: #72B134;
+	border: none;
+	outline: none;
+	color: #FFFFFF;
+	font-size: 1.4em;
+	padding: 0.5em 2.5em;
+	float: right;
+	margin-right: 2.5em;
+}
+.form .space {
+	background: #FFFFFF;
+	width: 5px;
+	height: 240px;
+	border-right: 5px solid #FFFFFF;
+	box-shadow: 1em 0 1em #DDDDDD;
+	margin-left: 70%;
+}
+.form img {
+	margin: 4em 4em 1em 7.5em;
+}
+.form .clogin {
+	text-align: center;
+}
+@media screen and (max-width:767px) {
+	.form .pic {
+		padding: 2.5em;
+	}
+	.form .clogin {
+		color: #FFFFFF;
+	}
+}
